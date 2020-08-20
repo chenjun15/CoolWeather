@@ -1,6 +1,8 @@
 package com.coolweather.android;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import android.content.Context;
@@ -12,6 +14,7 @@ import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
@@ -34,6 +37,8 @@ import okhttp3.Callback;
 import okhttp3.Response;
 
 public class WeatherActivity extends AppCompatActivity {
+    public DrawerLayout drawerLayout;
+    private Button navButton;
     public SwipeRefreshLayout swipeRefresh;
     private ScrollView weatherLayout;
     private TextView titleCity;
@@ -71,6 +76,14 @@ public class WeatherActivity extends AppCompatActivity {
         sportText = findViewById(R.id.sport_text);
         bingPicImg = findViewById(R.id.bing_pic_img);
         swipeRefresh = findViewById(R.id.swipe_refresh);
+        drawerLayout = findViewById(R.id.drawer_layout);
+        navButton = findViewById(R.id.nav_button);
+        navButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                drawerLayout.openDrawer(GravityCompat.START);
+            }
+        });
         swipeRefresh.setColorSchemeResources(R.color.colorPrimary);
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
         String weatherString = prefs.getString("weather", null);
@@ -94,7 +107,7 @@ public class WeatherActivity extends AppCompatActivity {
         });
         String bingPic = prefs.getString("bing_pic", null);
         if (bingPic != null)
-            Glide.with(this).load(bingPic).into(bingPicImg);
+            Glide.with(this).load(bingPic).diskCacheStrategy(DiskCacheStrategy.NONE).into(bingPicImg);
         else
             loadBingPic();
     }
