@@ -4,17 +4,36 @@ android {
     compileSdkVersion 29
     buildToolsVersion "29.0.2"
     defaultConfig {
-        applicationId "com.coolweather.android"
+        applicationId "com.cj.coolweather.app"
         minSdkVersion 19
         targetSdkVersion 29
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+//        flavorDimensions "version"
+    }
+//    productFlavors {
+//        qihoo {
+//            applicationId "com.coolweather.android.qihoo"
+//        }
+//        baidu {
+//            applicationId "com.coolweather.android.baidu"
+//        }
+//    }
+    signingConfigs {
+        config {
+            storeFile file(KEY_PATH)
+            storePassword KEY_PASS
+            keyAlias ALIAS_NAME
+            keyPassword ALIAS_PASS
+//            v2SigningEnabled false
+        }
     }
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.config
         }
     }
 }

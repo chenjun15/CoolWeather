@@ -1,4 +1,4 @@
-package com.coolweather.android.service;
+package com.coolweather.app.service;
 
 import android.app.AlarmManager;
 import android.app.PendingIntent;
@@ -10,9 +10,9 @@ import android.os.SystemClock;
 import android.preference.PreferenceManager;
 import android.util.Log;
 
-import com.coolweather.android.gson.Weather;
-import com.coolweather.android.util.HttpUtil;
-import com.coolweather.android.util.Utility;
+import com.coolweather.app.gson.Weather;
+import com.coolweather.app.util.HttpUtil;
+import com.coolweather.app.util.Utility;
 
 import org.jetbrains.annotations.NotNull;
 

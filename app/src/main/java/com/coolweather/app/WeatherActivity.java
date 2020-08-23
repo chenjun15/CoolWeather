@@ -1,4 +1,4 @@
-package com.coolweather.android;
+package com.coolweather.app;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.GravityCompat;
@@ -22,11 +22,11 @@ import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
-import com.coolweather.android.gson.Forecast;
-import com.coolweather.android.gson.Weather;
-import com.coolweather.android.service.AutoUpdateService;
-import com.coolweather.android.util.HttpUtil;
-import com.coolweather.android.util.Utility;
+import com.coolweather.app.gson.Forecast;
+import com.coolweather.app.gson.Weather;
+import com.coolweather.app.service.AutoUpdateService;
+import com.coolweather.app.util.HttpUtil;
+import com.coolweather.app.util.Utility;
 
 import org.jetbrains.annotations.NotNull;
 

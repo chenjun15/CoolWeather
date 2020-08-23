@@ -1,4 +1,4 @@
-package com.coolweather.android;
+package com.coolweather.app;
 
 import android.Manifest;
 import android.app.ProgressDialog;
@@ -20,11 +20,11 @@ import androidx.annotation.Nullable;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 
-import com.coolweather.android.db.City;
-import com.coolweather.android.db.County;
-import com.coolweather.android.db.Province;
-import com.coolweather.android.util.HttpUtil;
-import com.coolweather.android.util.Utility;
+import com.coolweather.app.db.City;
+import com.coolweather.app.db.County;
+import com.coolweather.app.db.Province;
+import com.coolweather.app.util.HttpUtil;
+import com.coolweather.app.util.Utility;
 
 import org.jetbrains.annotations.NotNull;
 import org.litepal.crud.DataSupport;
